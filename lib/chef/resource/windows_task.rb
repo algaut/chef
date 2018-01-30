@@ -202,7 +202,7 @@ class Chef
         if idle_time.nil? && frequency == :on_idle
           raise ArgumentError, "idle_time value should be set for :on_idle frequency."
         end
-        unless !idle_time.nil? && idle_time > 0 && idle_time <= 999
+        unless idle_time.nil? || idle_time > 0 && idle_time <= 999
           raise ArgumentError, "idle_time value #{idle_time} is invalid. Valid values for :on_idle frequency are 1 - 999."
         end
       end
